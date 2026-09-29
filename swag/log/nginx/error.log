@@ -1,0 +1,1 @@
+2026/09/29 12:00:19 [error] 808#808: *63 access forbidden by rule, client: 94.154.46.250, server: _, request: "GET /.htpasswd HTTP/1.1", host: "135.106.218.106"

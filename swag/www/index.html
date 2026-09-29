@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Случайная HTML-страница</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s ease;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Рандомная страница</h1>
+        <p>Случайное число от 1 до 100:</p>
+        <h2 id="rand-number">0</h2>
+        <button onclick="makeRandom()">Обновить рандом</button>
+    </div>
+
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function makeRandom() {
+            // Меняем цвет фона на случайный
+            document.body.style.backgroundColor = getRandomColor();
+            // Генерируем число от 1 до 100
+            let randNum = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('rand-number').innerText = randNum;
+        }
+
+        // Запускаем при загрузке страницы
+        makeRandom();
+    </script>
+
+</body>
+</html>
